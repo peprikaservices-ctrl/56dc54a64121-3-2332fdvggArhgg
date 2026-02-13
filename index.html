@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Love Story | Act 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <script>
+    (() => {
+      const path = window.location.pathname;
+      const isFile = /\.[a-z0-9]+$/i.test(path);
+      const basePath = path.endsWith("/")
+        ? path
+        : isFile
+          ? path.replace(/[^/]*$/, "")
+          : `${path}/`;
+      const baseTag = document.createElement("base");
+      baseTag.href = `${window.location.origin}${basePath}`;
+      document.head.appendChild(baseTag);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body data-scene="index" class="scene scene-intro">
+  <div id="particle-layer"></div>
+  <div class="vignette"></div>
+
+  <header class="top-controls">
+    <button id="audio-toggle" class="glass control-btn" aria-label="Toggle music">🔊 Music</button>
+  </header>
+
+  <main class="scene-shell center-content">
+    <div class="glass intro-card">
+      <p class="eyebrow">Act 1 · The Beginning</p>
+      <h1 id="typewriter" class="cinematic-title"></h1>
+      <button id="begin-story" class="primary-btn hidden">Begin Our Story ❤️</button>
+    </div>
+  </main>
+
+  <audio id="bg-music" loop preload="auto" src="assets/music/ambient-love.mp3"></audio>
+  <audio id="sparkle-sfx" preload="auto" src="assets/sfx/sparkle.mp3"></audio>
+
+  <div id="page-transition" class="page-transition"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

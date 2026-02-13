@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Love Story | Act 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script>
+    (() => {
+      const path = window.location.pathname;
+      const isFile = /\.[a-z0-9]+$/i.test(path);
+      const basePath = path.endsWith("/")
+        ? path
+        : isFile
+          ? path.replace(/[^/]*$/, "")
+          : `${path}/`;
+      const baseTag = document.createElement("base");
+      baseTag.href = `${window.location.origin}${basePath}`;
+      document.head.appendChild(baseTag);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-scene="scene2" class="scene scene-game">
+  <div id="particle-layer"></div>
+  <div class="vignette"></div>
+
+  <header class="top-controls">
+    <button id="audio-toggle" class="glass control-btn" aria-label="Toggle music">🔊 Music</button>
+  </header>
+
+  <main class="scene-shell">
+    <section class="glass panel game-panel">
+      <p class="eyebrow">Act 2 · The Journey</p>
+      <h1 class="scene-title">Find the Heart That Looks Like Us</h1>
+      <p class="scene-copy">Tap the floating hearts. One of them is glowing with our destiny.</p>
+
+      <div id="heart-game" class="heart-game" aria-label="Find the heart mini game"></div>
+
+      <div id="game-result" class="result-modal hidden" role="dialog" aria-live="polite">
+        <div class="glass result-card">
+          <h2>You found it 💘</h2>
+          <p>Love always knows the way back to us.</p>
+          <button id="to-scene3" class="primary-btn">Continue to Our Memories</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bg-music" loop preload="auto" src="assets/music/ambient-love.mp3"></audio>
+  <audio id="sparkle-sfx" preload="auto" src="assets/sfx/sparkle.mp3"></audio>
+
+  <div id="page-transition" class="page-transition"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
